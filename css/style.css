@@ -1,0 +1,92 @@
+body {font-family: "Poppins", system-ui; color: #09311a;}
+.nav-contrast {background: rgba(3,96,50,0.95);}
+.nav-link {color:#fff!important; margin-left:.6rem;}
+.nav-link.active {color: #aaffc2 !important;}
+.hero {padding:140px 0; background:linear-gradient(rgba(0,35,15,0.4),rgba(0,35,15,0.4)),url("images/Backlit-product-2.jpg")center/cover; color:white;}
+.btn-contrast {background:#25d366; color:white; border:none; border-radius:10px; padding:.7rem 1.2rem;}
+.btn-contrast:hover {background:#20b357;}
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 70px; /* slightly bigger */
+	height: 70px; /* slightly bigger */
+	background: #25d366;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1100;
+	box-shadow: 0 6px 18px rgba(37,211,102,0.24);
+	transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.whatsapp-float:hover{ transform: translateY(-4px); box-shadow: 0 10px 24px rgba(37,211,102,0.28); }
+.whatsapp-float img { width: 40px; height: 40px; }
+/* Font Awesome icon inside the float */
+.whatsapp-float .my-float,
+.whatsapp-float i {
+	font-size: 32px;
+	color: #fff;
+	line-height: 1;
+}
+
+/* Small screens: make it a bit smaller so it doesn't obstruct UI */
+@media (max-width: 480px) {
+	.whatsapp-float { width: 56px; height: 56px; bottom: 16px; right: 16px; }
+	.whatsapp-float .my-float, .whatsapp-float i { font-size: 22px; }
+	.whatsapp-float img { width: 28px; height: 28px; }
+}
+.site-footer {background:#2c3e50; color:white; font-size:14px;}
+
+
+/* Offer popup - right center */
+.offer-sidebar {
+  position: fixed;
+  right: 18px;               /* distance from right edge */
+  top: 50%;                  /* vertical center */
+  transform: translateY(-50%) translateX(110%); /* start off-canvas to the right */
+  width: 300px;
+  max-width: calc(100vw - 40px);
+  z-index: 3000;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fff6 100%);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(4,40,20,0.18);
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease;
+  opacity: 0;
+  padding: 18px;
+  font-family: inherit;
+  color: #05361f;
+}
+
+/* visible state */
+.offer-sidebar.visible {
+  transform: translateY(-50%) translateX(0); /* slide into view */
+  opacity: 1;
+}
+
+/* inner layout */
+.offer-inner { position: relative; }
+.offer-inner h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.offer-inner p { margin: 0 0 12px; font-size: 0.95rem; color: #225a37; }
+
+/* actions */
+.offer-actions { display:flex; gap:8px; align-items:center; }
+
+/* close button */
+.offer-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: #225a37;
+  cursor: pointer;
+}
+
+/* responsive tweaks (smaller screens: move a bit inward) */
+@media (max-width: 600px) {
+  .offer-sidebar { right: 10px; width: 86%; left: 10px; transform: translateY(-50%) translateX(0); } 
+  .offer-sidebar.visible { transform: translateY(-50%) translateX(0); }
+}
